@@ -6,14 +6,14 @@ namespace Utils
 {
     public class DrawLine : MonoBehaviour
     {
-		private LineRenderer 	line;
+		private LineRenderer 		line;
 		private bool 			isMousePressed;
 		private Vector3 		mousePos;
-		private List<Vector3> 	pointList;
+		private List<Vector3> 		pointList;
 		private Camera 			_camera;
 
-		public Color lineColor = Color.black;
-		public float lineSpeed = 10.0f;
+		public Color lineColor = 	Color.black;
+		public float lineSpeed = 	10.0f;
 
 		private void Awake()
 		{
