@@ -9,6 +9,7 @@ namespace ECS.Hybrid.Components
     {
 
         public LineRenderer line;
+        [HideInInspector]
         public bool isMousePressed;
         [HideInInspector]
         public Vector3 mousePos;
