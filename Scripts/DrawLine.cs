@@ -33,7 +33,7 @@ namespace Utils
 		{
 			_isMousePressed = true;
 			_line.positionCount = 0;
-			_pointList.RemoveRange(0, pointList.Count);
+			_pointList.RemoveRange(0, _pointList.Count);
 			_line.startColor = lineColor;
 			_line.endColor = lineColor;	
 		}
@@ -47,20 +47,20 @@ namespace Utils
 		/* Adding mouse position(Vector3) to point list, then draw line */
 		for (var i = 1; i < 3; i++)
 		{
-			if (pointList.Count >= 2) continue;
+			if (_pointList.Count >= 2) continue;
 			_pointList.Add(_mousePos);
 			_line.positionCount = _pointList.Count;
-			_line.SetPosition(pointList.Count - 1, _pointList[pointList.Count - 1]);
+			_line.SetPosition(_pointList.Count - 1, _pointList[_pointList.Count - 1]);
 		}
 		// Set line's 2nd position to be the mouse position.
-		_line.SetPosition(1, mousePos);
+		_line.SetPosition(1, _mousePos);
 
 	}
 
 	/* Initialize method for LineRenderer */
 	private void CreateAndSetLine()
 	{		
-		line = gameObject.AddComponent<LineRenderer>(); // Add a new LineRenderer component to gameObject
+		_line = gameObject.AddComponent<LineRenderer>(); // Add a new LineRenderer component to gameObject
 
 		/* no shadow things */
 		_line.receiveShadows = false;
